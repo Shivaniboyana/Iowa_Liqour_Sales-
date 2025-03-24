@@ -100,28 +100,6 @@ GROUP BY category_name
 ORDER BY total_sales DESC
 LIMIT 10;
 
--- Retrieve all sales transactions for "Tito's Handmade Vodka" in 2023.
 
-SELECT date,
-       store_name,
-       city,
-       category_name,
-       item_description,
-       bottles_sold,
-       sale_dollars,
-FROM `bigquery-public-data.iowa_liquor_sales.sales`
-WHERE EXTRACT(YEAR from date) = 2023
-AND item_description = 'TITOS HANDMADE VODKA'
-ORDER BY sale_dollars DESC;
-
--- Find the month with the highest total liquor sales in 2023.
-
-SELECT EXTRACT(MONTH FROM date) AS month,
-FORMAT ('$% .2F', SUM(sale_dollars)) AS total_sales,
-FROM `bigquery-public-data.iowa_liquor_sales.sales`
-WHERE EXTRACT(YEAR FROM date) = 2023
-GROUP BY month
-ORDER BY total_sales DESC
-LIMIT 1;
 
 
