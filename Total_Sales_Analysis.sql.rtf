@@ -9,10 +9,6 @@ GROUP BY item_description
 ORDER BY total_sales DESC
 LIMIT 10;
 
--- Retrieve all sales transactions for a specific year (e.g., 2023).
-
-SELECT date, sale_dollars FROM `bigquery-public-data.iowa_liquor_sales.sales`
-WHERE EXTRACT(YEAR from date) = 2023;
 
 -- What is the total sales revenue generated for each year?
 
