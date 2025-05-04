@@ -101,7 +101,7 @@ FORMAT('$% .2F',SUM(sale_dollars)) AS total_sales,
 AVG(bottle_volume_ml) AS avg_bottle_size
 FROM `bigquery-public-data.iowa_liquor_sales.sales`
 GROUP BY category_name
-ORDER BY total_sales DESC
+ORDER BY total_sales DESC;
 LIMIT 10;
 
 
